@@ -143,11 +143,60 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif}
 # HELPERS
 # ══════════════════════════════════════════════════
 def md_to_html(text: str) -> str:
-    """Convert markdown bold/code to HTML, and newlines to <br>."""
+    """Convert markdown bold/code/lists/tables to HTML, and newlines to <br>."""
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
     text = re.sub(r'`(.+?)`', r'<code>\1</code>', text)
-    text = text.replace("\n", "<br>")
-    return text
+    
+    lines = text.split("\n")
+    html_lines = []
+    in_list = False
+    in_table = False
+    
+    for line in lines:
+        if line.startswith("- "):
+            if not in_list:
+                html_lines.append('<ul style="margin-top:8px;margin-bottom:16px;padding-left:24px;">')
+                in_list = True
+            html_lines.append(f'<li style="margin-bottom:8px;line-height:1.6;">{line[2:]}</li>')
+        elif line.startswith("|"):
+            if not in_table:
+                html_lines.append('<table style="width:100%;border-collapse:collapse;margin:16px 0;background:#FFFFFF;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.05);">')
+                in_table = True
+            
+            if "---" in line:
+                continue
+                
+            cells = [c.strip() for c in line.split("|")[1:-1]]
+            row_html = "<tr>"
+            
+            # If it's the very first row of the table, treat as header
+            if len(html_lines) > 0 and html_lines[-1] == '<table style="width:100%;border-collapse:collapse;margin:16px 0;background:#FFFFFF;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.05);">':
+                for c in cells:
+                    row_html += f'<th style="background:rgba(158,98,64,0.1);color:#9E6240;padding:12px;text-align:left;font-weight:600;border-bottom:2px solid rgba(158,98,64,0.2);">{c}</th>'
+            else:
+                for c in cells:
+                    row_html += f'<td style="padding:12px;border-bottom:1px solid rgba(158,98,64,0.1);color:#4A3A2A;">{c}</td>'
+            row_html += "</tr>"
+            html_lines.append(row_html)
+        else:
+            if in_list:
+                html_lines.append('</ul>')
+                in_list = False
+            if in_table:
+                html_lines.append('</table>')
+                in_table = False
+                
+            if line.strip() == "":
+                html_lines.append("<br>")
+            else:
+                html_lines.append(f"<div style='margin-bottom:8px;'>{line}</div>")
+                
+    if in_list:
+        html_lines.append('</ul>')
+    if in_table:
+        html_lines.append('</table>')
+        
+    return "".join(html_lines)
 
 
 def language_selector():
@@ -290,15 +339,10 @@ st.markdown(f"""
 
 
 # ══════════════════════════════════════════════════
-# CHARTS ROW (Trend + Top States — part of overview)
+# OVERVIEW INSIGHT
 # ══════════════════════════════════════════════════
 if insights:
     section_insight("insight_overview")
-    col_trend, col_states = st.columns([3, 2])
-    with col_trend:
-        render_churn_trend(insights)
-    with col_states:
-        render_top_states(insights)
 
 
 # ══════════════════════════════════════════════════
@@ -359,12 +403,7 @@ with tab4:
     story_card("🔎", t("conclusions_causes_title").replace("🔎 ", ""), t("conclusions_causes"))
 
     # Key Findings
-    st.markdown(f"""
-    <div class="story-card">
-        <h3>{t("conclusions_findings_title")}</h3>
-    </div>
-    """, unsafe_allow_html=True)
-    st.markdown(t("conclusions_findings"))
+    story_card("📊", t("conclusions_findings_title").replace("📊 ", ""), t("conclusions_findings"))
 
     # Recommended Actions
     story_card("🚀", t("conclusions_actions_title").replace("🚀 ", ""), t("conclusions_actions"))
@@ -419,3 +458,12 @@ with tab4:
         f'<div class="intro-card"><p>{md_to_html(t("conclusions_prediction"))}</p></div>',
         unsafe_allow_html=True,
     )
+
+# ══════════════════════════════════════════════════
+# FOOTER
+# ══════════════════════════════════════════════════
+st.markdown("""
+<div style="text-align:center;padding:40px 0 20px;font-size:0.85rem;color:#8A7A6A;">
+    Desarrollado por <strong>Hely Camargo</strong> usando: Python, Streamlit, Scikit-Learn y Plotly.
+</div>
+""", unsafe_allow_html=True)
