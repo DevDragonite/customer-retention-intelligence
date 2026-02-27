@@ -1,0 +1,33 @@
+{
+  "mejor_cohort_m3": {
+    "cohort": "2017-06",
+    "retencion_pct": 0.43
+  },
+  "peor_cohort_m3": {
+    "cohort": "2016-09",
+    "retencion_pct": 0.0
+  },
+  "churn_cliff": {
+    "periodo": "M+0 → M+1",
+    "drop_pct": -95.26,
+    "descripcion": "Mayor caída de retención entre M+0 y M+1 (-95.26%)"
+  },
+  "retencion_promedio_por_periodo": {
+    "M+0": 100.0,
+    "M+1": 4.74,
+    "M+2": 0.26,
+    "M+3": 0.18,
+    "M+4": 0.2,
+    "M+5": 0.15,
+    "M+6": 0.18,
+    "M+7": 0.12,
+    "M+8": 0.11,
+    "M+9": 0.09,
+    "M+10": 0.12,
+    "M+11": 0.1,
+    "M+12": 0.07
+  },
+  "total_cohortes": 23,
+  "periodos_maximos": 20,
+  "retencion_promedio_m1": 4.74
+}

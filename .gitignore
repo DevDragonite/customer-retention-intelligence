@@ -23,11 +23,11 @@ wheels/
 
 # Data & Models
 data/raw/
-data/processed/
-data/outputs/
+# data/processed/ (Allowed for deployment)
+# data/outputs/ (Allowed for deployment)
 models/
-*.parquet
-*.csv
+# *.parquet (Allowed for deployment)
+# *.csv (Allowed for deployment)
 *.pkl
 
 # Environments
@@ -37,7 +37,7 @@ venv/
 ENV/
 
 # Streamlit
-.streamlit/
+# .streamlit/ (Allow config.toml to be pushed for theme colors on Cloud)
 
 # OS
 .DS_Store

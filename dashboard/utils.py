@@ -26,7 +26,7 @@ MODELS_DIR = PROJECT_ROOT / "models"
 # CACHED DATA LOADING
 # ══════════════════════════════════════════════════
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_features() -> Optional[pd.DataFrame]:
     """Load churn features parquet."""
     path = PROCESSED_DIR / "churn_features.parquet"
@@ -35,7 +35,7 @@ def load_features() -> Optional[pd.DataFrame]:
     return None
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_predictions() -> Optional[pd.DataFrame]:
     """Load churn predictions CSV."""
     path = OUTPUTS_DIR / "churn_predictions.csv"
@@ -44,7 +44,7 @@ def load_predictions() -> Optional[pd.DataFrame]:
     return None
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_at_risk() -> Optional[pd.DataFrame]:
     """Load at-risk customers CSV."""
     path = OUTPUTS_DIR / "at_risk_customers.csv"
@@ -53,7 +53,7 @@ def load_at_risk() -> Optional[pd.DataFrame]:
     return None
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_metrics() -> Optional[Dict[str, Any]]:
     """Load metrics report JSON."""
     path = OUTPUTS_DIR / "metrics_report.json"
@@ -63,7 +63,7 @@ def load_metrics() -> Optional[Dict[str, Any]]:
     return None
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_cohort_matrix() -> Optional[pd.DataFrame]:
     """Load cohort retention matrix parquet."""
     path = PROCESSED_DIR / "cohort_matrix.parquet"
@@ -72,7 +72,7 @@ def load_cohort_matrix() -> Optional[pd.DataFrame]:
     return None
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_revenue_cohort_matrix() -> Optional[pd.DataFrame]:
     """Load revenue cohort matrix parquet."""
     path = PROCESSED_DIR / "revenue_cohort_matrix.parquet"
@@ -81,7 +81,7 @@ def load_revenue_cohort_matrix() -> Optional[pd.DataFrame]:
     return None
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_insights() -> Optional[Dict[str, Any]]:
     """Load dashboard insights JSON."""
     path = OUTPUTS_DIR / "dashboard_insights.json"
@@ -91,7 +91,7 @@ def load_insights() -> Optional[Dict[str, Any]]:
     return None
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=3600, show_spinner=False)
 def load_cohort_insights() -> Optional[Dict[str, Any]]:
     """Load cohort insights JSON."""
     path = OUTPUTS_DIR / "cohort_insights.json"

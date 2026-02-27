@@ -1,0 +1,350 @@
+{
+  "kpis": {
+    "total_clientes": 93358,
+    "churn_rate": 58.92,
+    "clientes_churned": 55006,
+    "clientes_activos": 38352,
+    "revenue_en_riesgo": 15300549.63,
+    "clientes_en_riesgo_predicho": 92977,
+    "ltv_promedio": 165.2,
+    "revenue_total": 15422461.77,
+    "avg_days_since_last_purchase": 236.9,
+    "avg_review_score": 4.16
+  },
+  "churn_por_estado": {
+    "AP": {
+      "total": 66,
+      "churned": 66,
+      "churn_rate": 100.0
+    },
+    "PB": {
+      "total": 503,
+      "churned": 503,
+      "churn_rate": 100.0
+    },
+    "MS": {
+      "total": 680,
+      "churned": 680,
+      "churn_rate": 100.0
+    },
+    "RR": {
+      "total": 40,
+      "churned": 40,
+      "churn_rate": 100.0
+    },
+    "PI": {
+      "total": 464,
+      "churned": 464,
+      "churn_rate": 100.0
+    },
+    "PE": {
+      "total": 1546,
+      "churned": 1543,
+      "churn_rate": 99.81
+    },
+    "DF": {
+      "total": 2017,
+      "churned": 2013,
+      "churn_rate": 99.8
+    },
+    "RN": {
+      "total": 464,
+      "churned": 463,
+      "churn_rate": 99.78
+    },
+    "MT": {
+      "total": 855,
+      "churned": 853,
+      "churn_rate": 99.77
+    },
+    "CE": {
+      "total": 1257,
+      "churned": 1254,
+      "churn_rate": 99.76
+    },
+    "AL": {
+      "total": 387,
+      "churned": 386,
+      "churn_rate": 99.74
+    },
+    "SC": {
+      "total": 3444,
+      "churned": 3435,
+      "churn_rate": 99.74
+    },
+    "SE": {
+      "total": 327,
+      "churned": 326,
+      "churn_rate": 99.69
+    },
+    "BA": {
+      "total": 3158,
+      "churned": 3148,
+      "churn_rate": 99.68
+    },
+    "PA": {
+      "total": 922,
+      "churned": 919,
+      "churn_rate": 99.67
+    },
+    "MG": {
+      "total": 10996,
+      "churned": 10951,
+      "churn_rate": 99.59
+    },
+    "SP": {
+      "total": 39150,
+      "churned": 38987,
+      "churn_rate": 99.58
+    },
+    "PR": {
+      "total": 4768,
+      "churned": 4747,
+      "churn_rate": 99.56
+    },
+    "ES": {
+      "total": 1928,
+      "churned": 1919,
+      "churn_rate": 99.53
+    },
+    "RJ": {
+      "total": 11913,
+      "churned": 11854,
+      "churn_rate": 99.5
+    },
+    "RS": {
+      "total": 5167,
+      "churned": 5140,
+      "churn_rate": 99.48
+    },
+    "GO": {
+      "total": 1894,
+      "churned": 1884,
+      "churn_rate": 99.47
+    },
+    "MA": {
+      "total": 699,
+      "churned": 695,
+      "churn_rate": 99.43
+    },
+    "AM": {
+      "total": 140,
+      "churned": 139,
+      "churn_rate": 99.29
+    },
+    "TO": {
+      "total": 267,
+      "churned": 265,
+      "churn_rate": 99.25
+    },
+    "RO": {
+      "total": 230,
+      "churned": 228,
+      "churn_rate": 99.13
+    },
+    "AC": {
+      "total": 76,
+      "churned": 75,
+      "churn_rate": 98.68
+    }
+  },
+  "evolucion_churn_mensual": [
+    {
+      "mes": "2016-09",
+      "total_clientes": 1,
+      "churned": 1,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2016-10",
+      "total_clientes": 253,
+      "churned": 253,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-01",
+      "total_clientes": 688,
+      "churned": 688,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-02",
+      "total_clientes": 1584,
+      "churned": 1584,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-03",
+      "total_clientes": 2422,
+      "churned": 2422,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-04",
+      "total_clientes": 2195,
+      "churned": 2195,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-05",
+      "total_clientes": 3352,
+      "churned": 3352,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-06",
+      "total_clientes": 2963,
+      "churned": 2963,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-07",
+      "total_clientes": 3679,
+      "churned": 3679,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-08",
+      "total_clientes": 3974,
+      "churned": 3974,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-09",
+      "total_clientes": 3949,
+      "churned": 3949,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-10",
+      "total_clientes": 4298,
+      "churned": 4298,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-11",
+      "total_clientes": 7032,
+      "churned": 7032,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2017-12",
+      "total_clientes": 5356,
+      "churned": 5356,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2018-01",
+      "total_clientes": 6839,
+      "churned": 6839,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2018-02",
+      "total_clientes": 6286,
+      "churned": 6286,
+      "churn_rate": 100.0
+    },
+    {
+      "mes": "2018-03",
+      "total_clientes": 6825,
+      "churned": 135,
+      "churn_rate": 1.98
+    },
+    {
+      "mes": "2018-04",
+      "total_clientes": 6647,
+      "churned": 0,
+      "churn_rate": 0.0
+    },
+    {
+      "mes": "2018-05",
+      "total_clientes": 6625,
+      "churned": 0,
+      "churn_rate": 0.0
+    },
+    {
+      "mes": "2018-06",
+      "total_clientes": 6017,
+      "churned": 0,
+      "churn_rate": 0.0
+    },
+    {
+      "mes": "2018-07",
+      "total_clientes": 6063,
+      "churned": 0,
+      "churn_rate": 0.0
+    },
+    {
+      "mes": "2018-08",
+      "total_clientes": 6310,
+      "churned": 0,
+      "churn_rate": 0.0
+    }
+  ],
+  "modelo": {
+    "nombre": "Random Forest",
+    "threshold": 0.1,
+    "metricas_test": {
+      "auc": 1.0,
+      "f1": 0.898,
+      "precision": 0.8149,
+      "recall": 1.0
+    },
+    "feature_importance": {
+      "days_since_last_purchase": 0.2414,
+      "days_since_first_purchase": 0.0008,
+      "customer_tenure_days": 0.1017,
+      "total_orders": 0.0404,
+      "avg_days_between_orders": 0.0573,
+      "orders_last_30d": 0.0023,
+      "orders_last_60d": 0.0041,
+      "orders_last_90d": 0.0186,
+      "total_revenue": 0.0114,
+      "avg_order_value": 0.0027,
+      "max_order_value": 0.0029,
+      "revenue_trend": 0.0154,
+      "avg_review_score": 0.003,
+      "last_review_score": 0.0006,
+      "pct_reviews_below_3": 0.0003,
+      "has_negative_review": 0.0,
+      "review_score_trend": 0.0019,
+      "avg_delivery_days": 0.0016,
+      "delivery_delay_rate": 0.0013,
+      "avg_delay_days": 0.0001
+    }
+  },
+  "cohort_insights": {
+    "mejor_cohort_m3": {
+      "cohort": "2017-06",
+      "retencion_pct": 0.43
+    },
+    "peor_cohort_m3": {
+      "cohort": "2016-09",
+      "retencion_pct": 0.0
+    },
+    "churn_cliff": {
+      "periodo": "M+0 → M+1",
+      "drop_pct": -95.26,
+      "descripcion": "Mayor caída de retención entre M+0 y M+1 (-95.26%)"
+    },
+    "retencion_promedio_por_periodo": {
+      "M+0": 100.0,
+      "M+1": 4.74,
+      "M+2": 0.26,
+      "M+3": 0.18,
+      "M+4": 0.2,
+      "M+5": 0.15,
+      "M+6": 0.18,
+      "M+7": 0.12,
+      "M+8": 0.11,
+      "M+9": 0.09,
+      "M+10": 0.12,
+      "M+11": 0.1,
+      "M+12": 0.07
+    },
+    "total_cohortes": 23,
+    "periodos_maximos": 20,
+    "retencion_promedio_m1": 4.74
+  }
+}

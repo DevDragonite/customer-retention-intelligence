@@ -55,7 +55,7 @@ def render_risk_scatter(at_risk: pd.DataFrame) -> None:
 
         # Background dots
         if len(rest) > 0:
-            fig.add_trace(go.Scatter(
+            fig.add_trace(go.Scattergl(
                 x=rest["prob_churn"], y=rest["total_revenue"],
                 mode="markers",
                 marker=dict(size=5, color="#DEA47E", opacity=0.25),
@@ -64,7 +64,7 @@ def render_risk_scatter(at_risk: pd.DataFrame) -> None:
             ))
 
         # Top 10 highlighted
-        fig.add_trace(go.Scatter(
+        fig.add_trace(go.Scattergl(
             x=top10["prob_churn"], y=top10["total_revenue"],
             mode="markers+text",
             marker=dict(size=14, color="#CD4631", line=dict(width=2, color="#FFFFFF")),

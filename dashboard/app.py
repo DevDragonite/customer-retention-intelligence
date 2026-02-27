@@ -81,8 +81,8 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif}
 [data-testid="stMetricLabel"]{color:#5A4A3A !important;font-size:0.8rem !important;text-transform:uppercase;letter-spacing:0.08em}
 
 /* ── Tabs ── */
-[data-testid="stTabs"] [data-baseweb="tab-list"]{background:#FFFFFF;border-radius:12px;padding:4px;gap:4px;border:1px solid rgba(158,98,64,0.15);box-shadow:0 1px 4px rgba(0,0,0,0.04)}
-[data-testid="stTabs"] [data-baseweb="tab"]{background:transparent;border-radius:8px;color:#5A4A3A !important;font-weight:500;padding:10px 18px;transition:all 0.2s}
+[data-testid="stTabs"] [data-baseweb="tab-list"]{background:#FFFFFF;border-radius:12px;padding:4px;gap:4px;border:1px solid rgba(158,98,64,0.15);box-shadow:0 1px 4px rgba(0,0,0,0.04);display:flex;width:100%}
+[data-testid="stTabs"] [data-baseweb="tab"]{background:transparent;border-radius:8px;color:#5A4A3A !important;font-weight:500;padding:10px 18px;transition:all 0.2s;flex:1;text-align:center;justify-content:center}
 [data-testid="stTabs"] [aria-selected="true"]{background:linear-gradient(135deg,#9E6240,#CD4631) !important;color:#FFFFFF !important;box-shadow:0 2px 8px rgba(205,70,49,0.25)}
 
 /* ── Table ── */
@@ -105,7 +105,7 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif}
 /* ── Intro story ── */
 .intro-card{background:#FFFFFF;border-radius:16px;padding:28px 32px;margin-bottom:20px;border:1px solid rgba(158,98,64,0.1);box-shadow:0 2px 12px rgba(158,98,64,0.06)}
 .intro-card h3{color:#9E6240;font-size:1.15rem;margin:0 0 12px}
-.intro-card p{color:#4A3A2A;line-height:1.75;font-size:0.93rem;margin:0}
+.intro-card p, .intro-card div{color:#2E1F14 !important;line-height:1.75;font-size:1.02rem;margin:0;font-weight:500}
 
 /* ── Conclusion cards ── */
 .story-card{background:#FFFFFF;border-radius:16px;padding:24px 28px;margin:10px 0;border:1px solid rgba(158,98,64,0.1);box-shadow:0 2px 10px rgba(158,98,64,0.06)}
