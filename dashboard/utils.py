@@ -110,16 +110,16 @@ def apply_chart_theme(fig: go.Figure, title: str = "") -> go.Figure:
     fig.update_layout(
         title=dict(
             text=title,
-            font=dict(family="Space Grotesk", size=16, color="#DEA47E"),
+            font=dict(family="Space Grotesk", size=16, color="#9E6240"),
         ),
         paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(28,20,16,0.4)",
-        font=dict(family="Inter", color="#F8F2DC"),
+        plot_bgcolor="rgba(255,255,255,0.6)",
+        font=dict(family="Inter", color="#2E1F14"),
         legend=dict(
-            bgcolor="rgba(28,20,16,0.6)",
-            bordercolor="rgba(158,98,64,0.3)",
+            bgcolor="rgba(255,255,255,0.8)",
+            bordercolor="rgba(158,98,64,0.15)",
             borderwidth=1,
-            font=dict(color="#F8F2DC"),
+            font=dict(color="#2E1F14"),
         ),
         xaxis=dict(
             gridcolor="rgba(158,98,64,0.1)",

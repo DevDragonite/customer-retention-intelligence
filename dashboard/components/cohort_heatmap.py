@@ -7,7 +7,6 @@ Heatmap, retention curves, and cohort comparison cards.
 from typing import Dict, Any
 
 import plotly.graph_objects as go
-import plotly.express as px
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -21,7 +20,7 @@ from utils import apply_chart_theme, load_cohort_insights  # noqa: E402
 
 
 def render_cohort_heatmap(cohort_df: pd.DataFrame) -> None:
-    """Render the cohort retention heatmap with premium colorscale."""
+    """Render the cohort retention heatmap with warm colorscale."""
     if cohort_df.empty:
         st.warning(t("no_data"))
         return
@@ -48,7 +47,7 @@ def render_cohort_heatmap(cohort_df: pd.DataFrame) -> None:
             np.char.add(np.round(z_data, 1).astype(str), "%"),
         ),
         texttemplate="%{text}",
-        textfont=dict(size=10, color="#F8F2DC"),
+        textfont=dict(size=10, color="#2E1F14"),
         hovertemplate=(
             "Cohorte: %{y}<br>"
             "Período: %{x}<br>"
@@ -56,8 +55,8 @@ def render_cohort_heatmap(cohort_df: pd.DataFrame) -> None:
             "<extra></extra>"
         ),
         colorbar=dict(
-            title=dict(text=t("cohort_retention_pct"), font=dict(color="#F8F2DC")),
-            tickfont=dict(color="#F8F2DC"),
+            title=dict(text=t("cohort_retention_pct"), font=dict(color="#2E1F14")),
+            tickfont=dict(color="#2E1F14"),
         ),
     ))
 
@@ -82,8 +81,8 @@ def render_retention_curves(cohort_df: pd.DataFrame) -> None:
     if len(cohortes) > 10:
         cohortes = cohortes[::3]
 
-    palette = ["#DEA47E", "#81ADC8", "#CD4631", "#9E6240", "#F8F2DC",
-               "#D4956B", "#5A8FA8", "#A83828", "#7B4E32", "#E8DCC0"]
+    palette = ["#9E6240", "#DEA47E", "#CD4631", "#81ADC8", "#7D4E32",
+               "#C48B65", "#A83828", "#6A96B1", "#D4956B", "#5A8FA8"]
 
     for i, cohort in enumerate(cohortes):
         vals = df.loc[cohort, period_cols].values
@@ -104,12 +103,12 @@ def render_retention_curves(cohort_df: pd.DataFrame) -> None:
         ))
 
     fig = apply_chart_theme(fig, t("chart_retention_curves"))
-    fig.update_layout(height=450)
+    fig.update_layout(height=400)
     st.plotly_chart(fig, use_container_width=True)
 
 
 def render_cohort_comparison(insights: Dict[str, Any]) -> None:
-    """Render best/worst cohort comparison cards."""
+    """Render best/worst cohort comparison in white cards."""
     cohort_data = insights.get("cohort_insights", {})
     if not cohort_data:
         cohort_data = load_cohort_insights() or {}
@@ -123,11 +122,11 @@ def render_cohort_comparison(insights: Dict[str, Any]) -> None:
     with col1:
         if mejor:
             st.markdown(f"""
-            <div class="glass-card" style="text-align:center;">
-                <p style="color:rgba(248,242,220,0.5);font-size:0.85rem;margin:0;">{t("cohort_best")}</p>
-                <h3 style="color:#81ADC8;margin:8px 0;font-family:'Space Grotesk';">{mejor.get('cohort', 'N/A')}</h3>
+            <div class="content-card" style="text-align:center;">
+                <p style="color:#8A7A6A;font-size:0.82rem;margin:0;">{t("cohort_best")}</p>
+                <h3 style="color:#81ADC8;margin:8px 0;">{mejor.get('cohort','N/A')}</h3>
                 <p style="color:#81ADC8;font-size:1.2rem;margin:0;font-weight:700;">
-                    {mejor.get('retencion_pct', 0):.1f}% {t("cohort_retention_pct")}
+                    {mejor.get('retencion_pct',0):.1f}% {t("cohort_retention_pct")}
                 </p>
             </div>
             """, unsafe_allow_html=True)
@@ -135,11 +134,11 @@ def render_cohort_comparison(insights: Dict[str, Any]) -> None:
     with col2:
         if peor:
             st.markdown(f"""
-            <div class="glass-card" style="text-align:center;">
-                <p style="color:rgba(248,242,220,0.5);font-size:0.85rem;margin:0;">{t("cohort_worst")}</p>
-                <h3 style="color:#CD4631;margin:8px 0;font-family:'Space Grotesk';">{peor.get('cohort', 'N/A')}</h3>
+            <div class="content-card" style="text-align:center;">
+                <p style="color:#8A7A6A;font-size:0.82rem;margin:0;">{t("cohort_worst")}</p>
+                <h3 style="color:#CD4631;margin:8px 0;">{peor.get('cohort','N/A')}</h3>
                 <p style="color:#CD4631;font-size:1.2rem;margin:0;font-weight:700;">
-                    {peor.get('retencion_pct', 0):.1f}% {t("cohort_retention_pct")}
+                    {peor.get('retencion_pct',0):.1f}% {t("cohort_retention_pct")}
                 </p>
             </div>
             """, unsafe_allow_html=True)
@@ -147,11 +146,11 @@ def render_cohort_comparison(insights: Dict[str, Any]) -> None:
     with col3:
         if cliff:
             st.markdown(f"""
-            <div class="glass-card" style="text-align:center;">
-                <p style="color:rgba(248,242,220,0.5);font-size:0.85rem;margin:0;">{t("cohort_cliff")}</p>
-                <h3 style="color:#DEA47E;margin:8px 0;font-family:'Space Grotesk';">{cliff.get('periodo', 'N/A')}</h3>
-                <p style="color:#DEA47E;font-size:1.2rem;margin:0;font-weight:700;">
-                    {cliff.get('drop_pct', 0):.1f}% {t("cohort_drop")}
+            <div class="content-card" style="text-align:center;">
+                <p style="color:#8A7A6A;font-size:0.82rem;margin:0;">{t("cohort_cliff")}</p>
+                <h3 style="color:#9E6240;margin:8px 0;">{cliff.get('periodo','N/A')}</h3>
+                <p style="color:#9E6240;font-size:1.2rem;margin:0;font-weight:700;">
+                    {cliff.get('drop_pct',0):.1f}% {t("cohort_drop")}
                 </p>
             </div>
             """, unsafe_allow_html=True)
